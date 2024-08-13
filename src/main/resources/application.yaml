@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: task
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/task
+    username: task
+    password: task
+    hikari:
+      maximum-pool-size: 50
+      idle-timeout: 30000
+      minimum-idle: 2
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    default-schema: task
+#    enabled: false
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+token:
+  signing:
+    key: 53A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A75327855

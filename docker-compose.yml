@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  postgres:
+    container_name: task
+    image: library/postgres
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: task
+      POSTGRES_PASSWORD: task
+      POSTGRES_DB: task
